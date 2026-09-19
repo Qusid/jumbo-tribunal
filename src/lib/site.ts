@@ -12,5 +12,5 @@ export function withBase(path: string): string {
 export function absUrl(path = "/"): string {
   if (path === "/") return `${SITE_URL}/`;
   const p = path.startsWith("/") ? path : `/${path}`;
-  return `${SITE_URL}${p}`;
+  return `${SITE_URL}${p.replace(/\/$/, "")}/`;
 }

@@ -309,7 +309,12 @@ async function main() {
 const SITE_URL = "https://qusid.github.io/jumbo-tribunal";
 
 function writeSitemap(objects) {
-  const urls = ["/", "/method", "/control", ...objects.map((o) => `/case/${o.slug}`)];
+  const urls = [
+    "/",
+    "/method/",
+    "/control/",
+    ...objects.map((o) => `/case/${o.slug}/`),
+  ];
   const body = urls
     .map(
       (path) => `  <url>
