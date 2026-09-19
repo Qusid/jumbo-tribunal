@@ -1,0 +1,20 @@
+# JuMBO Tribunal
+
+Automatic case files for the 42 claimed Jupiter-mass binary objects (JuMBOs) in the Orion Nebula Cluster, from Pearson & McCaughrean (2023), checked against later JWST spectra.
+
+- Live: https://qusid.github.io/jumbo-tribunal/
+- Catalog: Pearson & McCaughrean 2023, arXiv:2310.01231
+- Spectra: Luhman 2025, arXiv:2507.03679
+- Imaging: JWST GTO 1256 NIRCam, ESASky HiPS
+
+This is not a discovery pipeline. Pearson masses assume a 1 Myr member at 390 pc. A spectrum that says background or stellar wins.
+
+## Run locally
+
+```bash
+npm install
+npm run ingest
+npm run dev
+```
+
+`npm run ingest` rebuilds `public/catalog.json` and JWST cutouts from the public Pearson table plus spectroscopic priors in `data/`.

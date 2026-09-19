@@ -1,0 +1,17 @@
+{
+  "name": "JuMBO Tribunal",
+  "short_name": "JuMBOs",
+  "description": "Automatic case files for 42 claimed Jupiter-mass binaries in Orion, on public JWST data.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0908",
+  "theme_color": "#0b0908",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

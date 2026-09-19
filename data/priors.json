@@ -1,0 +1,47 @@
+{
+  "nirspecBackground": [
+    {
+      "id": 6,
+      "component": "NW",
+      "ref": "Luhman 2025, MNRAS Letters (JWST program 2770)"
+    },
+    {
+      "id": 10,
+      "component": "SE",
+      "ref": "Luhman 2025, MNRAS Letters (JWST program 2770)"
+    },
+    {
+      "id": 11,
+      "component": "NW",
+      "ref": "Luhman 2025, MNRAS Letters (JWST program 2770)"
+    }
+  ],
+  "nirspecBackgroundNote": "Luhman (2025) classified seven JuMBO components observed with JWST/NIRSpec (program 2770) as background stars: they lack the H2O bands of young brown dwarfs. Three are named in the text (6NW, 10SE, 11NW). Four further IDs appear only in Figure 1 of that paper, so this engine marks the named three as spectroscopic background and the remaining systems as photometry-only.",
+  "opticalSpectra": [
+    {
+      "id": 24,
+      "spt": "M5.5",
+      "massMsun": 0.1,
+      "massMjup": 105,
+      "component": "unresolved pair",
+      "note": "Unresolved 0.1 arcsec pair. If an ONC member, evolutionary models give ~0.1 solar masses — a star, not a Jupiter-mass binary.",
+      "ref": "Slesnick et al. 2004; Luhman 2025"
+    },
+    {
+      "id": 29,
+      "spt": "M8",
+      "massMsun": 0.04,
+      "massMjup": 42,
+      "component": "primary",
+      "note": "Primary classified M8. At ONC age that is ~0.04 solar masses — a brown dwarf, not a JuMBO.",
+      "ref": "Luhman et al. 2024b; Luhman 2025"
+    }
+  ],
+  "radio": [
+    {
+      "id": 24,
+      "note": "Only JuMBO with a published VLA radio counterpart. Proper-motion upper limit ~6 km/s, consistent with a star-forming core rather than a fast ejection. Radio origin still uncertain.",
+      "ref": "Rodríguez et al. 2024; 2025"
+    }
+  ]
+}

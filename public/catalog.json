@@ -1,0 +1,2633 @@
+{
+  "generatedAt": "2026-09-19T13:00:41.348Z",
+  "engine": {
+    "name": "JuMBO tribunal",
+    "version": "0.1.0",
+    "rules": [
+      "A JWST/NIRSpec background classification wins over photometric masses.",
+      "A spectral type that implies mass ≫ 13 MJup at ONC age means the system is not a JuMBO, even if it is a cluster member.",
+      "Pearson masses are conditional: they assume the source is a 1 Myr member at 390 pc.",
+      "Photometry-only systems remain unconfirmed. High AV and wide separation lower the planetary-binary score; tight, lightly reddened pairs raise it.",
+      "This engine does not discover JuMBOs. It assembles public evidence."
+    ]
+  },
+  "sources": [
+    {
+      "id": "PM23",
+      "title": "Jupiter Mass Binary Objects in the Trapezium Cluster",
+      "authors": "Pearson & McCaughrean 2023",
+      "arxiv": "2310.01231",
+      "data": "JWST GTO 1256, MAST 10.17909/vjys-x251"
+    },
+    {
+      "id": "Luhman2024",
+      "title": "Independent NIRCam analysis of ONC JuMBO candidates",
+      "authors": "Luhman 2024"
+    },
+    {
+      "id": "Luhman2025",
+      "title": "JWST spectra of brown dwarf candidates in the Orion Nebula Cluster",
+      "authors": "Luhman 2025",
+      "arxiv": "2507.03679",
+      "data": "JWST program 2770"
+    },
+    {
+      "id": "Rodriguez",
+      "title": "Radio counterpart and proper-motion limit for JuMBO 24",
+      "authors": "Rodríguez et al. 2024, 2025"
+    }
+  ],
+  "priorsNote": "Luhman (2025) classified seven JuMBO components observed with JWST/NIRSpec (program 2770) as background stars: they lack the H2O bands of young brown dwarfs. Three are named in the text (6NW, 10SE, 11NW). Four further IDs appear only in Figure 1 of that paper, so this engine marks the named three as spectroscopic background and the remaining systems as photometry-only.",
+  "survey": {
+    "region": "Inner Orion Nebula / Trapezium Cluster",
+    "distancePc": 390,
+    "ageMyr": 1,
+    "fovArcmin": {
+      "w": 11,
+      "h": 7.5
+    },
+    "pmoCandidates": 540,
+    "claimedJumbos": 42,
+    "expectedChancePairsWithin1as": 3.1,
+    "jwstProgram": "GTO 1256",
+    "hips": "https://skies.esac.esa.int/JWST/NIRCam_Imaging/"
+  },
+  "counts": {
+    "unconfirmed": 37,
+    "background": 3,
+    "too-massive": 2
+  },
+  "objects": [
+    {
+      "id": 1,
+      "name": "JuMBO 1",
+      "slug": "jumbo-1",
+      "ra": 83.716375,
+      "dec": -5.374688,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 6.3,
+        "teffKIfMember": 896
+      },
+      "secondary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 4.3,
+        "teffKIfMember": 896
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 357.7,
+      "projectedSepArcsec": 0.9172,
+      "companionAngularSizeArcsec": 0.83,
+      "chanceAlignment": {
+        "sepArcsec": 0.9172,
+        "pRandomNeighbor": 0.00479,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.92\". p(a random PMO has a neighbor this close) ≈ 0.0048."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 5.3. Low extinction makes a background-giant impersonation harder, though still not a spectrum.",
+          "Projected separation 357.7 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-1.png",
+      "cutoutFovDeg": 0.002038222222222222
+    },
+    {
+      "id": 2,
+      "name": "JuMBO 2",
+      "slug": "jumbo-2",
+      "ra": 83.718439,
+      "dec": -5.391585,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 16.4,
+        "teffKIfMember": 1039
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 13.1,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 114.7,
+      "projectedSepArcsec": 0.2941,
+      "companionAngularSizeArcsec": 2.58,
+      "chanceAlignment": {
+        "sepArcsec": 0.2941,
+        "pRandomNeighbor": 0.00049,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.29\". p(a random PMO has a neighbor this close) ≈ 0.0005."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-2.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 3,
+      "name": "JuMBO 3",
+      "slug": "jumbo-3",
+      "ra": 83.720854,
+      "dec": -5.379591,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 19.7,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 10.8,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 52.3,
+      "projectedSepArcsec": 0.1341,
+      "companionAngularSizeArcsec": 5.65,
+      "chanceAlignment": {
+        "sepArcsec": 0.1341,
+        "pRandomNeighbor": 0.0001,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.13\". p(a random PMO has a neighbor this close) ≈ 0.0001."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-3.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 4,
+      "name": "JuMBO 4",
+      "slug": "jumbo-4",
+      "ra": 83.72738,
+      "dec": -5.444921,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 23.7,
+        "teffKIfMember": 1039
+      },
+      "secondary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 10.6,
+        "teffKIfMember": 896
+      },
+      "tertiary": null,
+      "massRatio": 0.5,
+      "projectedSepAu": 324.4,
+      "projectedSepArcsec": 0.8318,
+      "companionAngularSizeArcsec": 0.91,
+      "chanceAlignment": {
+        "sepArcsec": 0.8318,
+        "pRandomNeighbor": 0.00394,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.83\". p(a random PMO has a neighbor this close) ≈ 0.0039."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 42,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Projected separation 324.4 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-4.png",
+      "cutoutFovDeg": 0.0018484444444444444
+    },
+    {
+      "id": 5,
+      "name": "JuMBO 5",
+      "slug": "jumbo-5",
+      "ra": 83.727997,
+      "dec": -5.389459,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 10,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 32.8,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.667,
+      "projectedSepAu": 384.3,
+      "projectedSepArcsec": 0.9854,
+      "companionAngularSizeArcsec": 0.77,
+      "chanceAlignment": {
+        "sepArcsec": 0.9854,
+        "pRandomNeighbor": 0.00553,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.99\". p(a random PMO has a neighbor this close) ≈ 0.0055."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 42,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Projected separation 384.3 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-5.png",
+      "cutoutFovDeg": 0.002189777777777778
+    },
+    {
+      "id": 6,
+      "name": "JuMBO 6",
+      "slug": "jumbo-6",
+      "ra": 83.734156,
+      "dec": -5.368803,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 46.6,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 56.5,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 70.2,
+      "projectedSepArcsec": 0.18,
+      "companionAngularSizeArcsec": 4.21,
+      "chanceAlignment": {
+        "sepArcsec": 0.18,
+        "pRandomNeighbor": 0.00019,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.18\". p(a random PMO has a neighbor this close) ≈ 0.0002."
+      },
+      "verdict": {
+        "label": "background",
+        "score": 8,
+        "confidence": "high — spectrum",
+        "reasons": [
+          "NIRSpec of the NW component shows no young-brown-dwarf H2O bands. Classified as a reddened background star."
+        ],
+        "evidence": [
+          {
+            "kind": "spectrum",
+            "title": "JWST/NIRSpec (program 2770)",
+            "detail": "Luhman 2025, MNRAS Letters (JWST program 2770)",
+            "leans": "background"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-6.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 7,
+      "name": "JuMBO 7",
+      "slug": "jumbo-7",
+      "ra": 83.735012,
+      "dec": -5.387694,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 17.4,
+        "teffKIfMember": 896
+      },
+      "secondary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 17.3,
+        "teffKIfMember": 896
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 119,
+      "projectedSepArcsec": 0.3051,
+      "companionAngularSizeArcsec": 2.49,
+      "chanceAlignment": {
+        "sepArcsec": 0.3051,
+        "pRandomNeighbor": 0.00053,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.31\". p(a random PMO has a neighbor this close) ≈ 0.0005."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-7.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 8,
+      "name": "JuMBO 8",
+      "slug": "jumbo-8",
+      "ra": 83.736001,
+      "dec": -5.445662,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 21,
+        "teffKIfMember": 1039
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 15.9,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 101.2,
+      "projectedSepArcsec": 0.2595,
+      "companionAngularSizeArcsec": 2.92,
+      "chanceAlignment": {
+        "sepArcsec": 0.2595,
+        "pRandomNeighbor": 0.00038,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.26\". p(a random PMO has a neighbor this close) ≈ 0.0004."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-8.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 9,
+      "name": "JuMBO 9",
+      "slug": "jumbo-9",
+      "ra": 83.736884,
+      "dec": -5.332175,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 13.1,
+        "teffKIfMember": 896
+      },
+      "secondary": {
+        "massMsun": 0.0007,
+        "massMjup": 0.73,
+        "av": 8.8,
+        "teffKIfMember": 854
+      },
+      "tertiary": null,
+      "massRatio": 0.7,
+      "projectedSepAu": 211.5,
+      "projectedSepArcsec": 0.5423,
+      "companionAngularSizeArcsec": 1.4,
+      "chanceAlignment": {
+        "sepArcsec": 0.5423,
+        "pRandomNeighbor": 0.00168,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.54\". p(a random PMO has a neighbor this close) ≈ 0.0017."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-9.png",
+      "cutoutFovDeg": 0.0012051111111111112
+    },
+    {
+      "id": 10,
+      "name": "JuMBO 10",
+      "slug": "jumbo-10",
+      "ra": 83.748149,
+      "dec": -5.44569,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 6.9,
+        "teffKIfMember": 896
+      },
+      "secondary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 8.9,
+        "teffKIfMember": 896
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 342.5,
+      "projectedSepArcsec": 0.8782,
+      "companionAngularSizeArcsec": 0.86,
+      "chanceAlignment": {
+        "sepArcsec": 0.8782,
+        "pRandomNeighbor": 0.0044,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.88\". p(a random PMO has a neighbor this close) ≈ 0.0044."
+      },
+      "verdict": {
+        "label": "background",
+        "score": 8,
+        "confidence": "high — spectrum",
+        "reasons": [
+          "NIRSpec of the SE component shows no young-brown-dwarf H2O bands. Classified as a reddened background star."
+        ],
+        "evidence": [
+          {
+            "kind": "spectrum",
+            "title": "JWST/NIRSpec (program 2770)",
+            "detail": "Luhman 2025, MNRAS Letters (JWST program 2770)",
+            "leans": "background"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-10.png",
+      "cutoutFovDeg": 0.0019515555555555556
+    },
+    {
+      "id": 11,
+      "name": "JuMBO 11",
+      "slug": "jumbo-11",
+      "ra": 83.753378,
+      "dec": -5.431788,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.0008,
+        "massMjup": 0.84,
+        "av": 10.4,
+        "teffKIfMember": 868
+      },
+      "secondary": {
+        "massMsun": 0.0007,
+        "massMjup": 0.73,
+        "av": 15.9,
+        "teffKIfMember": 854
+      },
+      "tertiary": null,
+      "massRatio": 0.875,
+      "projectedSepAu": 192.2,
+      "projectedSepArcsec": 0.4928,
+      "companionAngularSizeArcsec": 1.54,
+      "chanceAlignment": {
+        "sepArcsec": 0.4928,
+        "pRandomNeighbor": 0.00139,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.49\". p(a random PMO has a neighbor this close) ≈ 0.0014."
+      },
+      "verdict": {
+        "label": "background",
+        "score": 8,
+        "confidence": "high — spectrum",
+        "reasons": [
+          "NIRSpec of the NW component shows no young-brown-dwarf H2O bands. Classified as a reddened background star."
+        ],
+        "evidence": [
+          {
+            "kind": "spectrum",
+            "title": "JWST/NIRSpec (program 2770)",
+            "detail": "Luhman 2025, MNRAS Letters (JWST program 2770)",
+            "leans": "background"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-11.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 12,
+      "name": "JuMBO 12",
+      "slug": "jumbo-12",
+      "ra": 83.75358,
+      "dec": -5.354639,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 20.1,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 19.8,
+        "teffKIfMember": 896
+      },
+      "tertiary": null,
+      "massRatio": 0.333,
+      "projectedSepAu": 366.2,
+      "projectedSepArcsec": 0.939,
+      "companionAngularSizeArcsec": 0.81,
+      "chanceAlignment": {
+        "sepArcsec": 0.939,
+        "pRandomNeighbor": 0.00502,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.94\". p(a random PMO has a neighbor this close) ≈ 0.0050."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 42,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Projected separation 366.2 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-12.png",
+      "cutoutFovDeg": 0.0020866666666666664
+    },
+    {
+      "id": 13,
+      "name": "JuMBO 13",
+      "slug": "jumbo-13",
+      "ra": 83.760064,
+      "dec": -5.393619,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 20.5,
+        "teffKIfMember": 896
+      },
+      "secondary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 26.5,
+        "teffKIfMember": 896
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 192.6,
+      "projectedSepArcsec": 0.4938,
+      "companionAngularSizeArcsec": 1.54,
+      "chanceAlignment": {
+        "sepArcsec": 0.4938,
+        "pRandomNeighbor": 0.00139,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.49\". p(a random PMO has a neighbor this close) ≈ 0.0014."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-13.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 14,
+      "name": "JuMBO 14",
+      "slug": "jumbo-14",
+      "ra": 83.767052,
+      "dec": -5.406016,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.009,
+        "massMjup": 9.43,
+        "av": 39.5,
+        "teffKIfMember": 2035
+      },
+      "secondary": {
+        "massMsun": 0.008,
+        "massMjup": 8.38,
+        "av": 36,
+        "teffKIfMember": 1892
+      },
+      "tertiary": null,
+      "massRatio": 0.889,
+      "projectedSepAu": 55.6,
+      "projectedSepArcsec": 0.1426,
+      "companionAngularSizeArcsec": 5.32,
+      "chanceAlignment": {
+        "sepArcsec": 0.1426,
+        "pRandomNeighbor": 0.00012,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.14\". p(a random PMO has a neighbor this close) ≈ 0.0001."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 36,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 37.8. Heavy reddening is where background giants most easily mimic faint planetary-mass SEDs (Luhman 2024)."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-14.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 15,
+      "name": "JuMBO 15",
+      "slug": "jumbo-15",
+      "ra": 83.768695,
+      "dec": -5.440258,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 39.8,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 26.5,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.667,
+      "projectedSepAu": 329.8,
+      "projectedSepArcsec": 0.8456,
+      "companionAngularSizeArcsec": 0.9,
+      "chanceAlignment": {
+        "sepArcsec": 0.8456,
+        "pRandomNeighbor": 0.00408,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.85\". p(a random PMO has a neighbor this close) ≈ 0.0041."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 30,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 33.1. Heavy reddening is where background giants most easily mimic faint planetary-mass SEDs (Luhman 2024).",
+          "Projected separation 329.8 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-15.png",
+      "cutoutFovDeg": 0.0018791111111111111
+    },
+    {
+      "id": 16,
+      "name": "JuMBO 16",
+      "slug": "jumbo-16",
+      "ra": 83.769429,
+      "dec": -5.415209,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 5.3,
+        "teffKIfMember": 896
+      },
+      "secondary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 6.5,
+        "teffKIfMember": 896
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 273.9,
+      "projectedSepArcsec": 0.7023,
+      "companionAngularSizeArcsec": 1.08,
+      "chanceAlignment": {
+        "sepArcsec": 0.7023,
+        "pRandomNeighbor": 0.00281,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.70\". p(a random PMO has a neighbor this close) ≈ 0.0028."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 54,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 5.9. Low extinction makes a background-giant impersonation harder, though still not a spectrum."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-16.png",
+      "cutoutFovDeg": 0.0015606666666666668
+    },
+    {
+      "id": 17,
+      "name": "JuMBO 17",
+      "slug": "jumbo-17",
+      "ra": 83.775698,
+      "dec": -5.432976,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.001,
+        "massMjup": 1.05,
+        "av": 24.5,
+        "teffKIfMember": 896
+      },
+      "secondary": {
+        "massMsun": 0.0006,
+        "massMjup": 0.63,
+        "av": 10.7,
+        "teffKIfMember": 840
+      },
+      "tertiary": null,
+      "massRatio": 0.6,
+      "projectedSepAu": 194.9,
+      "projectedSepArcsec": 0.4997,
+      "companionAngularSizeArcsec": 1.52,
+      "chanceAlignment": {
+        "sepArcsec": 0.4997,
+        "pRandomNeighbor": 0.00143,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.50\". p(a random PMO has a neighbor this close) ≈ 0.0014."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-17.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 18,
+      "name": "JuMBO 18",
+      "slug": "jumbo-18",
+      "ra": 83.779749,
+      "dec": -5.424113,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 11.7,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 6.6,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.667,
+      "projectedSepAu": 150.6,
+      "projectedSepArcsec": 0.3862,
+      "companionAngularSizeArcsec": 1.96,
+      "chanceAlignment": {
+        "sepArcsec": 0.3862,
+        "pRandomNeighbor": 0.00085,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.39\". p(a random PMO has a neighbor this close) ≈ 0.0009."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-18.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 19,
+      "name": "JuMBO 19",
+      "slug": "jumbo-19",
+      "ra": 83.785686,
+      "dec": -5.345893,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 22.6,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 31.5,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.667,
+      "projectedSepAu": 273.6,
+      "projectedSepArcsec": 0.7015,
+      "companionAngularSizeArcsec": 1.08,
+      "chanceAlignment": {
+        "sepArcsec": 0.7015,
+        "pRandomNeighbor": 0.00281,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.70\". p(a random PMO has a neighbor this close) ≈ 0.0028."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-19.png",
+      "cutoutFovDeg": 0.001558888888888889
+    },
+    {
+      "id": 20,
+      "name": "JuMBO 20",
+      "slug": "jumbo-20",
+      "ra": 83.786364,
+      "dec": -5.411568,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 19.1,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 11.3,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.667,
+      "projectedSepAu": 149.4,
+      "projectedSepArcsec": 0.3831,
+      "companionAngularSizeArcsec": 1.98,
+      "chanceAlignment": {
+        "sepArcsec": 0.3831,
+        "pRandomNeighbor": 0.00084,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.38\". p(a random PMO has a neighbor this close) ≈ 0.0008."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-20.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 21,
+      "name": "JuMBO 21",
+      "slug": "jumbo-21",
+      "ra": 83.788762,
+      "dec": -5.398635,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.007,
+        "massMjup": 7.33,
+        "av": 74.2,
+        "teffKIfMember": 1750
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 26.1,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.286,
+      "projectedSepAu": 200.5,
+      "projectedSepArcsec": 0.5141,
+      "companionAngularSizeArcsec": 1.47,
+      "chanceAlignment": {
+        "sepArcsec": 0.5141,
+        "pRandomNeighbor": 0.00151,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.51\". p(a random PMO has a neighbor this close) ≈ 0.0015."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 36,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 50.2. Heavy reddening is where background giants most easily mimic faint planetary-mass SEDs (Luhman 2024)."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-21.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 22,
+      "name": "JuMBO 22",
+      "slug": "jumbo-22",
+      "ra": 83.801462,
+      "dec": -5.342754,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 51.6,
+        "teffKIfMember": 1323
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 29.4,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 0.75,
+      "projectedSepAu": 127.4,
+      "projectedSepArcsec": 0.3267,
+      "companionAngularSizeArcsec": 2.32,
+      "chanceAlignment": {
+        "sepArcsec": 0.3267,
+        "pRandomNeighbor": 0.00061,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.33\". p(a random PMO has a neighbor this close) ≈ 0.0006."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 36,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 40.5. Heavy reddening is where background giants most easily mimic faint planetary-mass SEDs (Luhman 2024)."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-22.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 23,
+      "name": "JuMBO 23",
+      "slug": "jumbo-23",
+      "ra": 83.829058,
+      "dec": -5.44692,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 35.2,
+        "teffKIfMember": 1323
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 11.3,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.5,
+      "projectedSepAu": 314.7,
+      "projectedSepArcsec": 0.8069,
+      "companionAngularSizeArcsec": 0.94,
+      "chanceAlignment": {
+        "sepArcsec": 0.8069,
+        "pRandomNeighbor": 0.00371,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.81\". p(a random PMO has a neighbor this close) ≈ 0.0037."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 42,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Projected separation 314.7 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-23.png",
+      "cutoutFovDeg": 0.001793111111111111
+    },
+    {
+      "id": 24,
+      "name": "JuMBO 24",
+      "slug": "jumbo-24",
+      "ra": 83.831262,
+      "dec": -5.394369,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.011,
+        "massMjup": 11.52,
+        "av": 3.6,
+        "teffKIfMember": 2319
+      },
+      "secondary": {
+        "massMsun": 0.011,
+        "massMjup": 11.52,
+        "av": 3.5,
+        "teffKIfMember": 2319
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 28,
+      "projectedSepArcsec": 0.0718,
+      "companionAngularSizeArcsec": 10.56,
+      "chanceAlignment": {
+        "sepArcsec": 0.0718,
+        "pRandomNeighbor": 0.00003,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.07\". p(a random PMO has a neighbor this close) ≈ 0.0000."
+      },
+      "verdict": {
+        "label": "too-massive",
+        "score": 22,
+        "confidence": "high — spectrum",
+        "reasons": [
+          "Unresolved 0.1 arcsec pair. If an ONC member, evolutionary models give ~0.1 solar masses — a star, not a Jupiter-mass binary.",
+          "Only JuMBO with a published VLA radio counterpart. Proper-motion upper limit ~6 km/s, consistent with a star-forming core rather than a fast ejection. Radio origin still uncertain."
+        ],
+        "evidence": [
+          {
+            "kind": "spectrum",
+            "title": "M5.5 (unresolved pair)",
+            "detail": "Slesnick et al. 2004; Luhman 2025",
+            "leans": "member, not planetary"
+          },
+          {
+            "kind": "radio",
+            "title": "VLA 10 GHz counterpart",
+            "detail": "Rodríguez et al. 2024; 2025",
+            "leans": "real on-sky source"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-24.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 25,
+      "name": "JuMBO 25",
+      "slug": "jumbo-25",
+      "ra": 83.836455,
+      "dec": -5.371124,
+      "nComponents": 3,
+      "primary": {
+        "massMsun": 0.005,
+        "massMjup": 5.24,
+        "av": 14.2,
+        "teffKIfMember": 1465
+      },
+      "secondary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 16.4,
+        "teffKIfMember": 1323
+      },
+      "tertiary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 6.1,
+        "teffKIfMember": 1323
+      },
+      "massRatio": 0.8,
+      "projectedSepAu": 46.1,
+      "projectedSepArcsec": 0.1182,
+      "companionAngularSizeArcsec": 6.41,
+      "chanceAlignment": {
+        "sepArcsec": 0.1182,
+        "pRandomNeighbor": 0.00008,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.12\". p(a random PMO has a neighbor this close) ≈ 0.0001."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 51,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Projected separation 46.1 au (0.12\") is tight for this survey. Random pairing is unlikely.",
+          "Visual triple. Three faint red sources aligned is a stronger chance-alignment worry unless all three are spectroscopically members."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-25.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 26,
+      "name": "JuMBO 26",
+      "slug": "jumbo-26",
+      "ra": 83.838007,
+      "dec": -5.366544,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.008,
+        "massMjup": 8.38,
+        "av": 12.5,
+        "teffKIfMember": 1892
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 9.1,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 0.375,
+      "projectedSepAu": 267.1,
+      "projectedSepArcsec": 0.6849,
+      "companionAngularSizeArcsec": 1.11,
+      "chanceAlignment": {
+        "sepArcsec": 0.6849,
+        "pRandomNeighbor": 0.00268,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.68\". p(a random PMO has a neighbor this close) ≈ 0.0027."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-26.png",
+      "cutoutFovDeg": 0.001522
+    },
+    {
+      "id": 27,
+      "name": "JuMBO 27",
+      "slug": "jumbo-27",
+      "ra": 83.846621,
+      "dec": -5.399533,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.009,
+        "massMjup": 9.43,
+        "av": 2.4,
+        "teffKIfMember": 2035
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 2.8,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.222,
+      "projectedSepAu": 333.1,
+      "projectedSepArcsec": 0.8541,
+      "companionAngularSizeArcsec": 0.89,
+      "chanceAlignment": {
+        "sepArcsec": 0.8541,
+        "pRandomNeighbor": 0.00416,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.85\". p(a random PMO has a neighbor this close) ≈ 0.0042."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 2.6. Low extinction makes a background-giant impersonation harder, though still not a spectrum.",
+          "Projected separation 333.1 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-27.png",
+      "cutoutFovDeg": 0.001898
+    },
+    {
+      "id": 28,
+      "name": "JuMBO 28",
+      "slug": "jumbo-28",
+      "ra": 83.84694,
+      "dec": -5.392726,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.011,
+        "massMjup": 11.52,
+        "av": 8.7,
+        "teffKIfMember": 2319
+      },
+      "secondary": {
+        "massMsun": 0.009,
+        "massMjup": 9.43,
+        "av": 20.1,
+        "teffKIfMember": 2035
+      },
+      "tertiary": null,
+      "massRatio": 0.818,
+      "projectedSepAu": 58.9,
+      "projectedSepArcsec": 0.151,
+      "companionAngularSizeArcsec": 5.02,
+      "chanceAlignment": {
+        "sepArcsec": 0.151,
+        "pRandomNeighbor": 0.00013,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.15\". p(a random PMO has a neighbor this close) ≈ 0.0001."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-28.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 29,
+      "name": "JuMBO 29",
+      "slug": "jumbo-29",
+      "ra": 83.847252,
+      "dec": -5.346677,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.012,
+        "massMjup": 12.57,
+        "av": 11.9,
+        "teffKIfMember": 2461
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 14.4,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 0.25,
+      "projectedSepAu": 135,
+      "projectedSepArcsec": 0.3462,
+      "companionAngularSizeArcsec": 2.19,
+      "chanceAlignment": {
+        "sepArcsec": 0.3462,
+        "pRandomNeighbor": 0.00068,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.35\". p(a random PMO has a neighbor this close) ≈ 0.0007."
+      },
+      "verdict": {
+        "label": "too-massive",
+        "score": 22,
+        "confidence": "high — spectrum",
+        "reasons": [
+          "Primary classified M8. At ONC age that is ~0.04 solar masses — a brown dwarf, not a JuMBO."
+        ],
+        "evidence": [
+          {
+            "kind": "spectrum",
+            "title": "M8 (primary)",
+            "detail": "Luhman et al. 2024b; Luhman 2025",
+            "leans": "member, not planetary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-29.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 30,
+      "name": "JuMBO 30",
+      "slug": "jumbo-30",
+      "ra": 83.84854,
+      "dec": -5.405963,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.005,
+        "massMjup": 5.24,
+        "av": 33.1,
+        "teffKIfMember": 1465
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 2.2,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.4,
+      "projectedSepAu": 374.1,
+      "projectedSepArcsec": 0.9592,
+      "companionAngularSizeArcsec": 0.79,
+      "chanceAlignment": {
+        "sepArcsec": 0.9592,
+        "pRandomNeighbor": 0.00524,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.96\". p(a random PMO has a neighbor this close) ≈ 0.0052."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 42,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Projected separation 374.1 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-30.png",
+      "cutoutFovDeg": 0.002131555555555556
+    },
+    {
+      "id": 31,
+      "name": "JuMBO 31",
+      "slug": "jumbo-31",
+      "ra": 83.856732,
+      "dec": -5.387897,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.007,
+        "massMjup": 7.33,
+        "av": 12.8,
+        "teffKIfMember": 1750
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 15.2,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 0.429,
+      "projectedSepAu": 206.7,
+      "projectedSepArcsec": 0.53,
+      "companionAngularSizeArcsec": 1.43,
+      "chanceAlignment": {
+        "sepArcsec": 0.53,
+        "pRandomNeighbor": 0.0016,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.53\". p(a random PMO has a neighbor this close) ≈ 0.0016."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-31.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 32,
+      "name": "JuMBO 32",
+      "slug": "jumbo-32",
+      "ra": 83.860453,
+      "dec": -5.388966,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 14.4,
+        "teffKIfMember": 1323
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 11.9,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 0.75,
+      "projectedSepAu": 118,
+      "projectedSepArcsec": 0.3026,
+      "companionAngularSizeArcsec": 2.51,
+      "chanceAlignment": {
+        "sepArcsec": 0.3026,
+        "pRandomNeighbor": 0.00052,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.30\". p(a random PMO has a neighbor this close) ≈ 0.0005."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-32.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 33,
+      "name": "JuMBO 33",
+      "slug": "jumbo-33",
+      "ra": 83.863086,
+      "dec": -5.388234,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 17.8,
+        "teffKIfMember": 1323
+      },
+      "secondary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 23.1,
+        "teffKIfMember": 1323
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 73.7,
+      "projectedSepArcsec": 0.189,
+      "companionAngularSizeArcsec": 4.01,
+      "chanceAlignment": {
+        "sepArcsec": 0.189,
+        "pRandomNeighbor": 0.0002,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.19\". p(a random PMO has a neighbor this close) ≈ 0.0002."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-33.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 34,
+      "name": "JuMBO 34",
+      "slug": "jumbo-34",
+      "ra": 83.867221,
+      "dec": -5.388611,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.005,
+        "massMjup": 5.24,
+        "av": 15.4,
+        "teffKIfMember": 1465
+      },
+      "secondary": {
+        "massMsun": 0.005,
+        "massMjup": 5.24,
+        "av": 13.9,
+        "teffKIfMember": 1465
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 66.4,
+      "projectedSepArcsec": 0.1703,
+      "companionAngularSizeArcsec": 4.45,
+      "chanceAlignment": {
+        "sepArcsec": 0.1703,
+        "pRandomNeighbor": 0.00017,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.17\". p(a random PMO has a neighbor this close) ≈ 0.0002."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-34.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 35,
+      "name": "JuMBO 35",
+      "slug": "jumbo-35",
+      "ra": 83.868427,
+      "dec": -5.390019,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 10.1,
+        "teffKIfMember": 1323
+      },
+      "secondary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 10.3,
+        "teffKIfMember": 1181
+      },
+      "tertiary": null,
+      "massRatio": 0.75,
+      "projectedSepAu": 84.5,
+      "projectedSepArcsec": 0.2167,
+      "companionAngularSizeArcsec": 3.5,
+      "chanceAlignment": {
+        "sepArcsec": 0.2167,
+        "pRandomNeighbor": 0.00027,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.22\". p(a random PMO has a neighbor this close) ≈ 0.0003."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-35.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 36,
+      "name": "JuMBO 36",
+      "slug": "jumbo-36",
+      "ra": 83.878803,
+      "dec": -5.340274,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.013,
+        "massMjup": 13.62,
+        "av": 32.3,
+        "teffKIfMember": 2520
+      },
+      "secondary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 36,
+        "teffKIfMember": 1323
+      },
+      "tertiary": null,
+      "massRatio": 0.308,
+      "projectedSepAu": 363,
+      "projectedSepArcsec": 0.9308,
+      "companionAngularSizeArcsec": 0.81,
+      "chanceAlignment": {
+        "sepArcsec": 0.9308,
+        "pRandomNeighbor": 0.00494,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.93\". p(a random PMO has a neighbor this close) ≈ 0.0049."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 30,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 34.1. Heavy reddening is where background giants most easily mimic faint planetary-mass SEDs (Luhman 2024).",
+          "Projected separation 363 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": false,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-36.png",
+      "cutoutFovDeg": 0.0020684444444444444
+    },
+    {
+      "id": 37,
+      "name": "JuMBO 37",
+      "slug": "jumbo-37",
+      "ra": 83.882254,
+      "dec": -5.330745,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 18.3,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 32.2,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.667,
+      "projectedSepAu": 317.6,
+      "projectedSepArcsec": 0.8144,
+      "companionAngularSizeArcsec": 0.93,
+      "chanceAlignment": {
+        "sepArcsec": 0.8144,
+        "pRandomNeighbor": 0.00378,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.81\". p(a random PMO has a neighbor this close) ≈ 0.0038."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 42,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Projected separation 317.6 au is at the wide end of the 1\" selection. Chance alignment is more plausible here than for the tightest pairs."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-37.png",
+      "cutoutFovDeg": 0.0018097777777777778
+    },
+    {
+      "id": 38,
+      "name": "JuMBO 38",
+      "slug": "jumbo-38",
+      "ra": 83.883267,
+      "dec": -5.351932,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 27.8,
+        "teffKIfMember": 1323
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 24.4,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.5,
+      "projectedSepAu": 213.6,
+      "projectedSepArcsec": 0.5477,
+      "companionAngularSizeArcsec": 1.38,
+      "chanceAlignment": {
+        "sepArcsec": 0.5477,
+        "pRandomNeighbor": 0.00171,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.55\". p(a random PMO has a neighbor this close) ≈ 0.0017."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-38.png",
+      "cutoutFovDeg": 0.001217111111111111
+    },
+    {
+      "id": 39,
+      "name": "JuMBO 39",
+      "slug": "jumbo-39",
+      "ra": 83.886789,
+      "dec": -5.372932,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.004,
+        "massMjup": 4.19,
+        "av": 41.9,
+        "teffKIfMember": 1323
+      },
+      "secondary": {
+        "massMsun": 0.002,
+        "massMjup": 2.09,
+        "av": 32.9,
+        "teffKIfMember": 1039
+      },
+      "tertiary": null,
+      "massRatio": 0.5,
+      "projectedSepAu": 251,
+      "projectedSepArcsec": 0.6436,
+      "companionAngularSizeArcsec": 1.18,
+      "chanceAlignment": {
+        "sepArcsec": 0.6436,
+        "pRandomNeighbor": 0.00236,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.64\". p(a random PMO has a neighbor this close) ≈ 0.0024."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 36,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Mean AV ≈ 37.4. Heavy reddening is where background giants most easily mimic faint planetary-mass SEDs (Luhman 2024)."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-39.png",
+      "cutoutFovDeg": 0.001430222222222222
+    },
+    {
+      "id": 40,
+      "name": "JuMBO 40",
+      "slug": "jumbo-40",
+      "ra": 83.886856,
+      "dec": -5.364031,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.005,
+        "massMjup": 5.24,
+        "av": 18.1,
+        "teffKIfMember": 1465
+      },
+      "secondary": {
+        "massMsun": 0.005,
+        "massMjup": 5.24,
+        "av": 23,
+        "teffKIfMember": 1465
+      },
+      "tertiary": null,
+      "massRatio": 1,
+      "projectedSepAu": 164.3,
+      "projectedSepArcsec": 0.4213,
+      "companionAngularSizeArcsec": 1.8,
+      "chanceAlignment": {
+        "sepArcsec": 0.4213,
+        "pRandomNeighbor": 0.00101,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.42\". p(a random PMO has a neighbor this close) ≈ 0.0010."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-40.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    },
+    {
+      "id": 41,
+      "name": "JuMBO 41",
+      "slug": "jumbo-41",
+      "ra": 83.887251,
+      "dec": -5.375283,
+      "nComponents": 2,
+      "primary": {
+        "massMsun": 0.011,
+        "massMjup": 11.52,
+        "av": 31.7,
+        "teffKIfMember": 2319
+      },
+      "secondary": {
+        "massMsun": 0.0008,
+        "massMjup": 0.84,
+        "av": 17.2,
+        "teffKIfMember": 868
+      },
+      "tertiary": null,
+      "massRatio": 0.073,
+      "projectedSepAu": 287.2,
+      "projectedSepArcsec": 0.7364,
+      "companionAngularSizeArcsec": 1.03,
+      "chanceAlignment": {
+        "sepArcsec": 0.7364,
+        "pRandomNeighbor": 0.00309,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.74\". p(a random PMO has a neighbor this close) ≈ 0.0031."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 48,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-41.png",
+      "cutoutFovDeg": 0.0016364444444444445
+    },
+    {
+      "id": 42,
+      "name": "JuMBO 42",
+      "slug": "jumbo-42",
+      "ra": 83.897548,
+      "dec": -5.333713,
+      "nComponents": 3,
+      "primary": {
+        "massMsun": 0.003,
+        "massMjup": 3.14,
+        "av": 17.8,
+        "teffKIfMember": 1181
+      },
+      "secondary": {
+        "massMsun": 0.0007,
+        "massMjup": 0.73,
+        "av": 15.2,
+        "teffKIfMember": 854
+      },
+      "tertiary": {
+        "massMsun": 0.0007,
+        "massMjup": 0.73,
+        "av": 10.8,
+        "teffKIfMember": 854
+      },
+      "massRatio": 0.233,
+      "projectedSepAu": 123.3,
+      "projectedSepArcsec": 0.3162,
+      "companionAngularSizeArcsec": 2.4,
+      "chanceAlignment": {
+        "sepArcsec": 0.3162,
+        "pRandomNeighbor": 0.00057,
+        "surveyExpectedPairsWithin1as": 3.1,
+        "note": "If 540 planetary-mass candidates are sprinkled at random over the 11×7.5 arcmin mosaic, Pearson & McCaughrean expect 3.1 chance pairs inside 1 arcsec. This system's separation is 0.32\". p(a random PMO has a neighbor this close) ≈ 0.0006."
+      },
+      "verdict": {
+        "label": "unconfirmed",
+        "score": 44,
+        "confidence": "medium — photometry only",
+        "reasons": [
+          "No published NIRSpec classification for this system in the text of Luhman (2025). Pearson masses assume a 1 Myr ONC member at 390 pc — they are not independent confirmation.",
+          "Visual triple. Three faint red sources aligned is a stronger chance-alignment worry unless all three are spectroscopically members."
+        ],
+        "evidence": [
+          {
+            "kind": "photometry",
+            "title": "NIRCam SED fit (Pearson & McCaughrean 2023)",
+            "detail": "Mass and AV from 1 Myr evolutionary models at 390 pc.",
+            "leans": "claimed PMO binary"
+          },
+          {
+            "kind": "context",
+            "title": "Luhman (2024, 2025) photometric challenge",
+            "detail": "Independent NIRCam colors and seven NIRSpec JuMBO components argue that most claimed JuMBOs are reddened background stars, not a new binary population.",
+            "leans": "against planetary binary"
+          }
+        ]
+      },
+      "ifMember": {
+        "assumption": "1 Myr, 390 pc, Pearson & McCaughrean 2023 evolutionary-model fit",
+        "belowDeuteriumLimit": true,
+        "noStar": true,
+        "sky": "The Orion Nebula fills the sky. There is no host star. The companion is a second self-luminous world."
+      },
+      "cutout": "/cutouts/jumbo-42.png",
+      "cutoutFovDeg": 0.0011944444444444444
+    }
+  ]
+}
